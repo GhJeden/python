@@ -1,0 +1,45 @@
+# print("Hello world!")
+# print('Hello world 2')
+
+# print(14, 15, 25, 56)
+# print(14, "text", 78)
+
+# print(13, 12, 45, 34, sep=', ')
+
+# print("The game of the year is 'Clair Obscur: Expedition 33'")
+# print('The game of the year is "Clair Obscur: Expedition 33"')
+# print("The game of the year is \"Clair Obscur: Expedition 33\"")
+# print('The game of the year is \'Clair Obscur: Expedition 33\'')
+# print("\\ - символ з якого починаються escape-послідовності")
+
+# print("Цей рядок розбитий\nна два рядки")
+# print("\t цей текст написаний з абзацу (табуляція)")
+
+# print("Цей прінт і наступний", end=" ")
+# print("На одному рядку")
+
+# однорядковий коментар
+
+'''
+Це багаторядковий
+коментар
+'''
+
+# Символ, що виконує операції називають операторами
+# Об'єкти з якими виконується операція називають операнди
+#За кількістю операндів оператори поділяються на унарні та бінарні
+#Набір операторів та операндів називають виразом
+
+print(10 + 12)
+print(12*23-(12+5)/4)
+
+print("10+12 =", 10+12)
+print("10-12 =", 10-12)
+print("10*12 =", 10*12)
+print("10/12 =", 10/12)
+print("10%12 =", 10%12)
+print("10//12 =", 10//12)
+print("10**12 =", 10**12)
+
+print(+10)
+print(-10)

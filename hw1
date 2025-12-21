@@ -1,0 +1,3 @@
+print("To be \nOr not \nTo be")
+print('"Life is what happens \n\twhen \n\t you`re busy making other plans" \n\tJohn Lennon')
+print('"The best way to predict the future \n\tis to\n\t\tinvent it" \n\t\t  Alan Kay')
