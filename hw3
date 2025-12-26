@@ -1,0 +1,43 @@
+#First task
+num1 = float( input("Введите 1-е число: "))
+num2 = float( input("Введите 2-е число: "))
+num3 = float( input("Введите 3-е число: "))
+
+print(f"{num1} + {num2} + {num3} = {num1 + num2 + num3}")
+print(f"{num1} * {num2} * {num3} = {num1 * num2 * num3}")
+
+#Second task
+frstDiagnl = float( input("Введите 1-ю сторону: "))
+scndDiagnl = float( input("Введите 2-ю сторону: "))
+
+print(F"{frstDiagnl} * {scndDiagnl} = {frstDiagnl * scndDiagnl}")
+
+#Third task
+frstNmbr = float( input("Введите зп: "))
+scndNmbr = float( input("Введите ежемесячный платеж: "))
+thrdNmbr = float( input("Введите задолженность: "))
+
+print(f"{frstNmbr} - ({scndNmbr} + {thrdNmbr}) = {frstNmbr - (scndNmbr + thrdNmbr)}")
+
+#Fourth task
+klmtrs = float( input("Введите сколько километров: "))
+fuel = float( input("Введите сколько топлива: "))
+cost = float( input("Введите какая цена: "))
+
+print(f"{klmtrs} / {fuel} * {cost} = {klmtrs / fuel * cost}")
+
+#Fifth task
+sum_of_pay = float( input("Введите сумму заказа: "))
+ppl = float( input("Введите количество людей: "))
+
+print(f"{sum_of_pay} / {ppl} = {sum_of_pay / ppl}")
+print(f"(({sum_of_pay} / {ppl}) * 15) / 100 = {((sum_of_pay / ppl) * 15) / 100}")
+
+#Sixth task
+cost_of_rent = float( input("Введите стоимость аренды за 1 день: "))
+days = float( input("Введите сколько дней аренды: "))
+payment = float( input("Введите сумму залога: "))
+
+print(f"{cost_of_rent} * {days} + {payment} = {cost_of_rent * days + payment}")
+print(f"{cost_of_rent} * {days} = {cost_of_rent * days}")
+print(f"({cost_of_rent} * {days}) / {days} = {(cost_of_rent * days) / days}")
