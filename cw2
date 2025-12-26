@@ -1,0 +1,127 @@
+# First task
+#num1 = float( input("Введіть перше число: ") )
+#num2 = float( input("Введіть друге число: ") )
+
+#print(type(num1))
+#print(type(num2))
+
+#print(f"{num1} + {num2} = {num1 + num2}")
+#print(f"{num1} - {num2} = {num1 - num2}")
+#print(f"{num1} * {num2} = {num1 * num2}")
+
+#Second task
+#num_1 = float( input("Введите первое число: "))
+#num_2 = float( input("Введите второе число: "))
+
+#print(f"{num_1} * {num_2} / 100 = {num_1 * num_2 / 100}")
+
+#Third task
+#width = float( input("Введите ширину: "))
+#height = float( input("Введите высоту: "))
+
+#print(f"{width} * {height} = {width * height}")
+
+#Fourth task
+#width_1 = float( input("Введите ширину: "))
+
+#print(f"4 * {width_1} = {4 * width_1}")
+
+#Fifth task
+#sentimeters = float( input("Введите длину в сантиметрах: "))
+
+#print(f"{sentimeters}cm / 100 = {sentimeters / 100}m")
+
+#Sixth task
+oneSide = float( input("Введите нужное количество краски для одной стены: "))
+
+print(f"{oneSide}L * 4 = {oneSide * 4}L")
+
+
+
+
+
+
+
+#user_name = "Vova"
+#user_age = 22
+
+#print(f"Hello, {user_name}")
+#print(f"Your age is {user_age}")
+
+#print(f"5 + 10 = {5 + 10}")
+
+
+# number = 20
+# print(number)
+# number += 5
+# print(number)
+# number -= 5
+# print(number)
+# number *= 5
+# print(number)
+# number /= 5
+# print(number)
+# number %= 5
+# print(number)
+# number //= 5
+# print(number)
+# number **= 5
+# # number = number + 5
+# print(number)
+
+
+# UserName = "Vova" # PascalCase
+# userName = "Vova" # camelCase
+# user_name = "Vova" # snake_case
+
+
+# число = 12
+
+# number1 = 10
+# number_1 = 12
+# 1number = 12
+
+# numbers_sum = 10 + 15
+
+# print(numbers_sum)
+# print(type(numbers_sum))
+
+# numbers_mult = numbers_sum * 10
+# print(numbers_mult) 
+
+# numbers_sum = 12 + 100
+# print(numbers_sum)
+
+# del numbers_sum
+
+# print(numbers_sum)
+
+
+
+#user_name = None
+
+# print(123)
+
+# print("Hello, python")
+
+# print(10 * 45 - (12 + 45))
+
+# print(10 * 45 - (12 + 45) + 10)
+
+# int (integer) - цілі числа, доступні арифметичні операції
+# str (string) - рядок тексту, послідовність символів
+# float (floating point number) - дробові числа, доступні арифметичні операції
+
+# print(type(10))
+# print(type("Hello"))
+# print(type(10.5))
+# print(type(10))
+# print(type(10.0))
+
+# print(type(10 + 12))
+# print(type("Hello" + " python"))
+# print(type(12 / 6))
+
+# print("123" - "456")
+# print("hello" / "python")
+ 
