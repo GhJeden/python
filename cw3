@@ -168,11 +168,9 @@ uah = float(input('Type course of hryvna for today: '))
 choice = str(input('Choice your type of value: '))
 
 
-if choice == ('euro') or ('eur'):
+if (choice == ('euro')) or (('eur')):
     print(f'dollars * euro = {dollars * euro}')
-
-if choice == ("fund") or ('gbp'):
+elif (choice == ("fund")) or (('gbp')):
     print(f'dollars * gbp = {dollars * gbp}')
-
-if choice == ('hryvna') or ('uah'):
+elif (choice == ('hryvna')) or (('uah')):
     print(f'dollars * uah = {dollars * uah}')
