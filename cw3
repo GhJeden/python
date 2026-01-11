@@ -1,0 +1,178 @@
+# print("Hello, world")
+# print(10)
+# print(10, 12, 14)
+# print(10, 5, 6, 6 ,sep=', ')
+
+# Тип даних - характеристика даних, яка визначає діапазон значень та набір доступних операцій.
+
+# str - послідовність символів
+# int - цілі числа
+# float - дробові числа
+
+# print(type(10 / 5))
+
+# Змінна - іменована область пам'яті, що зберігає значення певного типу і може його змінювати
+# протягом виконання програми.
+
+# group = 'П511'
+# print(type(group))
+# group = 511
+# print(type(group))
+
+# weather = input('Введіть поточну погоду: ')
+# print(weather)
+
+# number1 = float(input("Введіть число: "))
+# print(type(number1))
+# number2 = float(input("Введіть число: "))
+# print(f'{number1} ** {number2} = {number1 ** number2}')
+
+# can_pinguins_swim = True
+# can_pinguins_fly = False
+
+# print(f'Чи можуть пінгвіни плавати? {can_pinguins_swim}')
+# print(f'Чи можуть пінгвіни літати? {can_pinguins_fly}')
+# print(type(can_pinguins_fly))
+# print(type(can_pinguins_swim))
+
+# number = int(input("Введіть ціле число: "))
+
+# print(f'{number} > 10? {number > 10}')
+# print(f'{number} >= 10? {number >= 10}')
+# print(f'{number} < 10? {number < 10}')
+# print(f'{number} <= 10? {number <= 10}')
+# print(f'{number} == 10? {number == 10}')
+# print(f'{number} != 10? {number != 10}')
+
+#is_raining = input("Чи іде зараз дощ? (так/ні) ")
+
+#if is_raining == 'так':
+#    print("Беремо парасолю!")
+
+'''
+# is_cold = input("Чи зараз холодно? (так/ні)")
+
+# if is_cold == 'так':
+#     print('Вдягаємо теплий одяг')
+# else:
+#     print('Вдягаємо легкий одяг')
+'''
+
+#temperature = int(input("Скільки зараз градусів на вулиці? "))
+
+#if temperature <= -10:
+#    print('Вдягаємось дуже тепло: рукавички, термобілизна, зимова шуба, зимові штанці, черевики')
+#elif temperature > -10 and temperature <= 5: # else if
+#    print('Вдягаємо тепло: куртка, теплі штанці, теплі кросівки')
+#elif temperature > 5 and temperature <= 16:
+#    print('Вдягаємось легко: кофта, сорочка, кеди, легкі штанці')
+#else:
+#    print("Вдягаємось по-літньому: футболка, шорти, шкльопки і на море!")
+
+#print('Виходимо на вулицю!')
+
+
+#print(f'True and True = {True and True}')
+#print(f'False and True = {False and True}')
+#print(f'True and False = {True and False}')
+#print(f'False and False = {False and False}')
+
+#print()
+
+#print(f'True or True = {True or True}')
+#print(f'False or True = {False or True}')
+#print(f'True or False = {True or False}')
+#print(f'False or False = {False or False}')
+
+#print()
+
+#print(f'not True = {not True}')
+#print(f'not False = {not False}')
+
+#print()
+
+#number1 = float(input("Введіть перше число: "))
+#number2 = float(input("Введіть друге число: "))
+
+#operation = input('Оберіть операцію (+, -, *, /): ')
+
+#if operation == '+':
+ #   print(f'{number1} + {number2} = {number1 + number2}')
+#elif operation == '-':
+  #  print(f'{number1} - {number2} = {number1 - number2}')
+#elif operation == '*':
+  #  print(f'{number1} * {number2} = {number1 * number2}')
+#elif operation == '/':
+#    if number2 == 0:
+ #       print('Не можна ділити на нуль!')
+ #   else:
+ #       print(f'{number1} / {number2} = {number1 / number2}')
+#else:
+#    print('Некоректна операція!')
+
+
+
+number = int(input('Введите число: '))
+
+if number % 2 == 0:
+    print('Число четное.')
+else:
+    print('Число не четное.')
+
+num = int(input('Type your number: '))
+if num % 7 == 0:
+    print('Number is multiple 7')
+else:
+    print('Number isn`t multiple 7')
+
+number1 = int(input('Type first number: '))
+number2 = int(input('Type second number: '))
+
+if number1 > number2:
+    print(number1)
+    print('That number bigger than the other one')
+else:
+    print(number2)
+    print('That number bigger that the other one ')
+
+if number1 < number2:
+    print(number1)
+    print('That number is smaller than the other one')
+else:
+    print(number2)
+    print('That number is smaller than the other one')
+
+number1 = float(input("Введіть перше число: "))
+number2 = float(input("Введіть друге число: "))
+
+operation = input('Оберіть операцію (+, -, *, /): ')
+
+if operation == '+':
+    print(f'{number1} + {number2} = {number1 + number2}')
+elif operation == '-':
+    print(f'{number1} - {number2} = {number1 - number2}')
+elif operation == '*':
+    print(f'{number1} * {number2} = {number1 * number2}')
+elif operation == '/':
+    if number2 == 0:
+       print('Не можна ділити на нуль!')
+    else:
+       print(f'{number1} / {number2} = {number1 / number2}')
+else:
+    print('Некоректна операція!')
+
+dollars = float(input('Type your amount of dollars: '))
+euro = float(input('Type course of euro for today: '))
+gbp = float(input('Type course of fund for today: '))
+uah = float(input('Type course of hryvna for today: '))
+choice = str(input('Choice your type of value: '))
+
+
+if choice == ('euro') or ('eur'):
+    print(f'dollars * euro = {dollars * euro}')
+
+if choice == ("fund") or ('gbp'):
+    print(f'dollars * gbp = {dollars * gbp}')
+
+if choice == ('hryvna') or ('uah'):
+    print(f'dollars * uah = {dollars * uah}')
