@@ -174,3 +174,102 @@ elif (choice == ("fund")) or (('gbp')):
     print(f'dollars * gbp = {dollars * gbp}')
 elif (choice == ('hryvna')) or (('uah')):
     print(f'dollars * uah = {dollars * uah}')
+
+
+time = int(input('Enter time that had passed in seconds: '))
+
+seconds = 24 * 3600
+seconds_left = seconds - time
+
+hour = seconds_left // 3600
+minute = (seconds_left % 3600) // 60
+second = (seconds_left % 60)
+
+print(f"До полночи осталось: {hour} часов {minute} минут {second} секунд")
+
+diameter = int(input('Enter diameter of circle: '))
+
+radius = diameter / 2
+square = 3,14 * diameter ^ radius
+perimeter = 2 * 3,14 * radius
+
+print(f"Square of circle is {square} and perimeter of circle is {perimeter}")
+
+cost_of = int(input('Enter cost of gaming console: '))
+n = int(input('Enter amount of gaming consoles: '))
+sale = int(input('Enter sale price of gaming console: '))
+
+sale_cost_of = print(f'cost_of - sale = {cost_of - sale}')
+
+if n >= 2:
+    print(f'Price with sale is {sale_cost_of} and price without is {cost_of}')
+    print(f'cost_of * n = {cost_of * n}')
+    print(f'sale_cost_of * n = {sale_cost_of * n}')
+else:
+    print(f'Price with sale is {sale_cost_of} and price without is {cost_of}')
+
+weight_of_file = float(input('Type into me what weight is your file: '))
+int_con = float(input('Type your speed of internet connection in bytes: '))
+
+result = weight_of_file // int_con
+
+time_01 = 24 * 3600
+seconds_01 = result * time_01
+
+hourS = seconds_01 // 3600
+minuteS = (seconds_01 % 3600) // 60
+secondS = (seconds_01 % 60)
+
+print(f'For downloading this file you need {hourS} hours, {minuteS} minutes and {secondS} seconds.')
+
+weather = int(input('Enter time: '))
+
+if (weather > 0) and (weather < 6):
+    print('Good night!')
+elif (weather >= 6) and (weather < 13):
+    print('Good morning Vietnam!')
+elif (weather >= 13) and (weather < 17):
+    print("Good day!")
+elif (weather >= 17) and (weather < 0):
+    print('Good evening!')
+
+
+celsius = int(input('Type into me your temperature in celsius: '))
+
+if celsius < -10:
+    print('Very cold')
+elif (celsius >= -10) and (celsius < 0):
+    print('Cold')
+elif (celsius >= 0) and (celsius < 15):
+    print('Chilly')
+elif (celsius >= 15) and (celsius < 25):
+    print('Warm')
+elif celsius > 25:
+    print('Hot')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hello_World(print)
