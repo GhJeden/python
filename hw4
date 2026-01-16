@@ -1,0 +1,92 @@
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+num3 = float(input("Enter third number: "))
+choi = str(input("Enter number from first to third with capital letter you want to choose: "))
+
+if choi == ("First"):
+    print(num1)
+elif choi == ("Second"):
+    print(num2)
+elif choi == ("Third"):
+    print(num3)
+
+num1_1 = float(input("Enter first number: "))
+num2_2 = float(input("Enter second number: "))
+num3_3 = float(input("Enter third number: "))
+choi_2 = str(input("Enter number from first to third with capital letter you want to choose: "))
+
+if choi_2 == ("First"):
+    print(num1_1)
+elif choi_2 == ("Second"):
+    print(num2_2)
+elif choi_2 == ("Third"):
+    print(num3_3)
+
+
+mark = int(input("Enter your mark from 1 to 5: "))
+
+if mark == 1:
+    print("Very bad")
+elif mark == 2:
+    print("Bad")
+elif mark == 3:
+    print("Not bad")
+elif mark == 4:
+    print("Good")
+elif mark == 5:
+    print("Excellent")
+else:
+    print("This isn`t number from 1 to 5")
+
+meter = float(input("Enter your amount of meters: "))
+pers_choice = str(input('Enter what type you want to choose, miles, duyms, kilometers, santimeters or yards:'))
+
+miles = (f"meter * 1,60934 = {meter * 1,60934}")
+duyms = (f"meter * 2,54 = {meter * 2,54}")
+yards = (f"meter * 0,9144 = {meter * 0,9144}")
+kilometers = (f"meter * 1000 = {meter * 1000}")
+santimeters = (f"meter / 100 = {meter / 100}")
+
+
+if pers_choice == ("miles"):
+    print(miles)
+elif pers_choice == ("duyms"):
+    print(duyms)
+elif pers_choice == ("yards"):
+    print(yards)
+elif pers_choice == ("kilometers"):
+    print(kilometers)
+elif pers_choice == ("santimeters"):
+    print(santimeters)
+
+
+number1 = float(input("Введіть перше число: "))
+number2 = float(input("Введіть друге число: "))
+
+operation = input('Оберіть операцію (+, -, *, /, ^, //): ')
+
+if operation == '+':
+    print(f'{number1} + {number2} = {number1 + number2}')
+elif operation == '-':
+    print(f'{number1} - {number2} = {number1 - number2}')
+elif operation == '*':
+    print(f'{number1} * {number2} = {number1 * number2}')
+elif operation == '/':
+    if number2 == 0:
+        print('Не можна ділити на нуль!')
+    else:
+        print(f'{number1} / {number2} = {number1 / number2}')
+elif operation == '^':
+    print(f"number1 ** number2 = {number1 ** number2}")
+elif operation == "//":
+    print(f"number1 // number2 = {number1 // number2}")
+else:
+    print('Некоректна операція!')
+
+
+rebmun = int(input("Enter three-digits number: "))
+
+if rebmun == ("111") or ('222') or ('333') or ("444") or ("555") or ("666") or ("777") or ("888") or ("999"):
+    print("All digits are the same.")
+else:
+    print("All digits aren`t the same.")
