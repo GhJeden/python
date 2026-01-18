@@ -1,0 +1,143 @@
+'''
+a = 100
+b = 50
+
+if a > b: print('a bigger than b')
+10 + 11 - binar operator
+num = -10
+-num - unar operator
+
+age = 17 
+can vote = age >= 18 ? True : False
+print('a > b') if a > b else (print('a < b') if a < b)
+
+login = input("enter your login: ")
+
+display_name  = login if login else 'guest'
+
+print(f'hello, {display_name}')
+
+age = 18
+
+if age < 18:
+    pass # TODO: Implement underage logic later
+else:
+    print('Full access granted')
+'''
+'''
+day = int(input("enter number of the day of the week: "))
+
+match day:
+    case 1: print("Monday")
+    case 2: print("Tuesday")
+    case 3: print("Wednesday")
+    case 4: print("Thursday")
+    case 5: print("Friday")
+    case 6: print("Saturday")
+    case 7: print("Sunday")
+'''
+'''
+if day == 1:
+    print('Monday')
+elif day == 2:
+    print('Tuesday')
+elif day == 3:
+    print('Wednesday')
+elif day == 4:
+    print('Thursday')
+elif day == 5:
+    print('Friday')
+elif day == 6:
+    print('Saturday')
+elif day == 7:
+    print('Sunday')
+else:
+    print('Incorrect number of day.')
+'''
+
+
+mark = int(input('Enter your grade for your work: '))
+
+if mark >= 90 and mark <= 100:
+    print('Excellent')
+elif mark >= 70 and mark <= 89:
+    print('Good') 
+elif mark >= 50 and mark <= 69:
+    print('It`s okay')
+elif mark <= 50:
+    print('Bad')
+else:
+    print("It`s not a grade from 1 to 100")
+
+
+work = int(input('Enter your work years: '))
+salary = int(input('Enter your salary sum: '))
+
+if work < 1:
+    print("You can`t have a bigger premie")
+elif work >= 1 and work <= 3:
+    print(f'(salary / 100 * 5) + salary = {(salary / 100 * 5) + salary}')
+    print("There your premie")
+elif work >= 3 and work <= 5:
+    print(f'(salary / 100 * 10) + salary = {(salary / 100 * 10) + salary}')
+    print('There your premie')
+elif work > 5:
+    print(f'(salary / 100 * 15) + salary = {(salary / 100 * 15) + salary}')
+    print("There ur premie")
+
+fDN = int(input('Enter your 4-digit number: '))
+    
+result1 = fDN // 1000
+result2 = (fDN // 100) % 10
+result3 = (fDN // 10) % 10
+result4 = fDN % 10
+
+result5 = result1 + result2 + result3 + result4
+
+if result5 % 2 == 0:
+    print("The number is pair")
+else:
+    print("The number isn`t pair")
+
+num = int(input("Enter your 6-digit number, if you can count: "))
+
+if num < 100000 or user_num > 999999:
+    print("Did u learn how to count? if not, make it already")
+else:
+
+    num1 = num // 100000
+    num2 = (num // 10000) % 10
+    num3 = (num // 1000) % 10
+    num4 = (num // 100) % 10
+    num5 = (num // 10) % 10
+    num6 = num % 10
+
+
+    sum_first = num1 + num2 + 3
+    sum_second = num4 + num5 + num6
+
+
+    if sum_first == sum_second:
+        print("keep it 6")
+    else:
+        print("don`t go in casino today")
+
+    
+us_num = int(input("enter your number already ^_^ : "))
+
+
+if us_num < 100000 or us_num > 999999:
+    print("я твоей маме позвоню скажу что ты матешу прогуливал")
+else:
+
+    peace1 = us_num // 100000
+    peace2 = (us_num // 10000) % 10
+    peace3 = (us_num // 1000) % 10
+    peace4 = (us_num // 100) % 10
+    peace5 = (us_num // 10) % 10
+    peace6 = us_num % 10
+
+    fin_num = ( peace6 * 100000 + peace5 * 10000 + peace3 * 1000 + peace4 * 100 + peace2 * 10 + peace1
+    )
+
+    print("Ответ:", fin_num)
