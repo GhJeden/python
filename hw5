@@ -1,0 +1,86 @@
+num = int(input("Write down your number: "))
+
+num2 = num ** 0
+num3 = num ** 1
+num4 = num ** 2
+num5 = num ** 3
+num6 = num ** 4
+num7 = num ** 5
+num8 = num ** 6
+num9 = num ** 7
+
+print(num2)
+print(num3)
+print(num4)
+print(num5)
+print(num6)
+print(num7)
+print(num8)
+print(num9)
+
+
+number = int(input("Enter ur number from one to hundred: "))
+
+if number % 3: 
+    print("Fizz")
+elif number % 5:
+    print("Buzz")
+elif number % 3 and number % 5:
+    print("Fizz Buzz")
+elif number < 1 and number > 100:
+    print('That answer doesn`t count, u know how to count?')
+
+
+snacks = int(input("What you want to have first? 1. Salad - 5$; 2.Soup - 7$; 3. Nothing - 0$; Write down the price of meal: "))
+main_dishes = int(input('What u want to eat from main dishes? 1. Chicken - 10$; 2. Fish - 12$; 3. Nothing - 0$; Enter the price like before: '))
+desserts = int(input('Enter price of dessert: 1. Ice-Cream - 3$; 2. Fruits - 4$; 3. Nothing - 0$'))
+
+three_dishes = (snacks + main_dishes + desserts)
+
+if snacks > 0 and main_dishes > 0 and desserts > 0:
+    print(f'three_dishes / 100 * 10 = {three_dishes / 100 * 10}')
+    print("That`s your meal with discount")
+elif snacks == 0 or main_dishes == 0 or desserts == 0:
+    print("You may not have a discount")
+elif three_dishes >= 20:
+    print(f"three_dishes / 100 * 15 = {three_dishes / 100 * 15}")
+    print("That`s your meal with discount")
+elif snacks == 7 and main_dishes == 12:
+    print(f"three_dishes - 2 = {three_dishes - 2}")
+    print("That`s your meal with discount")
+elif main_dishes == 10 and desserts == 3:
+    print("You may have a free tea for choosing chicken and ice-cream")
+else:
+    print("There your dishes with discount: {three_dishes}$")
+
+'''
+Умови:
+Меню комплексного обіду.
+● Закуски:
+○ Салат – 5$,
+○ Суп – 7$.
+● Основні страви:
+○ Курка – 10$,
+○ Риба – 12$.
+● Десерти:
+○ Морозиво – 3$,
+○ Фрукти – 4$.
+Знижки.
+● Якщо клієнт замовляє всі три позиції (закуску, основну
+страву і десерт), надається знижка 10% на все
+замовлення.
+● Якщо сума замовлення перевищує 20$, знижка
+збільшується до 15%.
+● Для постійних клієнтів надається додаткова знижка 5%,
+яка підсумовується з іншими знижками.
+Спеціальні пропозиції.
+● Якщо клієнт замовляє "Суп" і "Рибу", надається знижка 2$
+на десерт.
+● Якщо клієнт замовляє "Курку" і "Морозиво", до
+замовлення додається безкоштовний напій (наприклад,
+"Чай").
+Підсумкова вартість.
+● Програма повинна коректно застосувати всі знижки та
+спеціальні пропозиції, а потім розрахувати підсумкову
+вартість замовлення.
+'''
