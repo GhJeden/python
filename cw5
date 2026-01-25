@@ -1,0 +1,128 @@
+
+#needed_potatoes = int(input("Сколько картошки почистить? "))
+#pealed_potatoes = 0
+#
+#while pealed_potatoes < needed_potatoes:
+#    print("Берем картошку...")
+#    is_rotten = input('Картошка гнилая? ')
+#    if is_rotten == "да":
+#        print('Выкидываем!')
+#        continue
+#    print("Чистим картошку...")
+#    pealed_potatoes += 1
+#    print(f"Готово! Почищено: {pealed_potatoes}")
+#    is_tired = input('Устал ли ты? ')
+#    if is_tired == 'да':
+#        break
+#else:
+#    print('Почистили всю картошку!')
+#
+#print(f'Почистили {pealed_potatoes} картошки!')
+#while True:
+#    num_1 = float(input('Enter first number: '))
+#    num_2 = float(input('Enter second number: '))
+#    action = input('Enter operation (+, -, *, /): ')
+#    
+#    match action:
+#        case '+': print(f'{num_1} + {num_2} = {num_1 + num_2}')
+#        case '-': print(f'{num_1} - {num_2} = {num_1 - num_2}')
+#        case '*': print(f'{num_1} * {num_2} = {num_1 * num_2}')
+#        case '/':
+#              if num_2 == 0:print('We cannot make it')
+#              else:print(f'{num_1} / {num_2} = {num_1 / num_2}')
+#        case _: print("Incorrect operation!")
+#         
+#    q = input('Input \'q\' to quit or press Enter to continue')
+#    if q == 'q':
+#         break
+
+
+num_1 = int(input('Enter first number: '))
+num_2 = int(input('Enter second number: '))
+
+while num_1 < num_2:
+    num_1 += 1
+    print(num_1)
+else:
+    print('All numbers from the first till the second number')
+
+
+
+n_1 = int(input('Enter first number: '))
+n_2 = int(input('Enter second number: '))
+
+while n_1 < n_2:
+    print("There`s your unpaired numbers")
+    n_1 += 1
+    if n_1 % 2 == 0:
+        continue
+    else:
+        print(n_1)
+nu_1 = int(input('Enter first number: '))
+nu_2 = int(input('Enter second number: '))
+
+while nu_2 > nu_1:
+    nu_2 -= 1
+    if nu_2 % 2 != 0:
+        continue
+    else:
+        print(nu_2)
+number_1 = int(input('Enter first number: '))
+number_2 = int(input('Enter second number: '))
+action = input("Choose your order(1, 2): ")
+
+match action:
+    case "1": 
+        while number_1 <= number_2:
+            number_1 += 1
+            print(number_1)
+        else:
+            print('There your numbers')
+    case "2":
+        while number_2 >= number_1:
+            number_2 -= 1
+            print(number_2)
+        else:
+            print('There your numbers')
+p_1 = int(input('Enter first number: '))
+p_2 = int(input('Enter second number: '))
+
+while p_1 < p_2:
+    p_1 += 1
+    if p_1 % 2 == 0:
+        continue
+    else:
+        print(p_1)
+else:
+    print('There ur numbers')
+
+while p_1 > p_2:
+    p_1 -= 1
+    if p_1 % 2 == 0:
+        continue
+    else:
+        print(p_1)
+else:
+    print('There ur numbers')
+
+
+pi_1 = int(input('Enter first number: '))
+pi_2 = int(input('Enter second number: '))
+
+while pi_1 > pi_2: 
+    pi_2 += 1
+    if pi_2 % 2 != 0:
+        continue
+    else:
+        print(pi_2)
+else:
+    print("There ur numbers")
+
+while pi_1 < pi_2:
+    pi_1 += 1
+    if pi_1 % 2 == 0:
+        continue
+    else:
+        print(pi_1)
+else:
+    print("There ur numbers")
