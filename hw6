@@ -1,0 +1,60 @@
+i1 = int(input("Enter first number: "))
+i2 = int(input("Enter second number: "))
+
+while i1 < i2:
+    i1 += 1
+    if i1 % 7 != 0:
+        continue
+    else:
+        print(i1)
+else:
+    print("There ur number")
+
+
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+
+while num1 < num2:
+    num1 += 1
+    print(num1)
+else:
+    print("This is ur numbers")
+
+
+while num2 < num1:
+    num2 -= 1
+    print(num2)
+else:
+    print("There ur numbers")
+
+while num1 < num2:
+    num1 += 1
+    if num1 % 7 != 0:
+        continue
+    else:
+        print(num1)
+else:
+    print('There ur numbers')
+
+while num1 < num2:
+    num1 += 1
+    if num1 % 5 != 0:
+        continue
+    else:
+        print(num1)
+else:
+    print('There ur numbers')
+
+
+
+int1 = int(input("Enter first number: "))
+int2 = int(input("Enter second number: "))
+
+
+while int1 < int2: 
+    int1 += 1
+    if int1 % 3 != 0:
+        continue
+    else:
+        print(int1)
