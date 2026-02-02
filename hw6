@@ -47,14 +47,85 @@ else:
     print('There ur numbers')
 
 
+nu_1 = int(input("Enter first num: "))
+nu_2 = int(input("Enter second num: "))
 
-int1 = int(input("Enter first number: "))
-int2 = int(input("Enter second number: "))
+now = nu_1
 
-
-while int1 < int2: 
-    int1 += 1
-    if int1 % 3 != 0:
-        continue
+while True:
+    if now > nu_2:
+        break
+    if now % 3 == 0 and now % 5 == 0:
+        print("Fizz Buzz")
+    elif now % 3 == 0:
+        print("Fizz")
+    elif now % 5 == 0:
+        print("Buzz")
     else:
-        print(int1)
+        print(now)
+
+    now += 1
+
+
+first = int(input("Start of diapazone: "))
+last = int(input("End of diapazone: "))
+path = int(input("Step: "))
+
+order = input("Enter the kilter (1 — direct, 2 — reversed): ")
+
+if order == "1":
+    current = first
+    while True:
+        if current > last:
+            break
+        print(current)
+        current += path
+elif order == "2":
+    current = last
+    while True:
+        if current < first:
+            break
+        print(current)
+        current -= path
+else:
+    print("Incorrect choice")
+
+
+
+n_1 = int(input("Start of diapazone: "))
+n_2 = int(input("End of diapazone: "))
+
+if n_1 > n_2:
+    n_1, n_2 = n_2, n_1
+
+curr = n_1
+product = 1
+found = False
+
+while True:
+    if curr > n_2:
+        break
+
+    if curr % 4 == 0 and curr % 6 != 0:
+        product *= curr
+        found = True
+
+    curr += 1
+
+if found:
+    print("Sum of numbers:", product)
+else:
+    print("Don`t have numbers in diapazone on 4-6")
+
+
+Eva_01 = int(input("Number A: "))
+Eva_02 = int(input("Degree N: "))
+
+result = 1
+i = 0
+
+while i < Eva_02:
+    result = result * Eva_01
+    i += 1
+
+print("A to a degree N:", result)
