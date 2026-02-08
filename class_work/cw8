@@ -1,0 +1,132 @@
+"""
+side = int(input('Введіть довжину сторони: '))
+symbol = input('Введіть символ: ')
+
+for i in range(1, side // 2 + 1):
+    for j in range(1, side // 2 + 1):
+        if j < i:
+            print(symbol, end='')
+        else:
+            print(' ', end='')
+
+    for j in range(side // 2, 0, -1):
+        if j < i:
+            print(symbol, end='')
+        else:
+            print(' ', end='')
+    print()
+
+for i in range(1, side // 2 + 1):
+    for j in range(side // 2, 0, -1):
+        if j < i:
+            print(' ', end='')
+        else:
+            print(symbol, end='')
+
+    for j in range(1, side // 2 + 1):
+        if j < i:
+            print(' ', end='')
+        else:
+            print(symbol, end='')
+    print()
+"""
+
+#text = "\thello, world!   \n"
+#text = text.strip()
+
+#text_lower = text.lower()
+#text_upper = text.upper()
+#print(text_lower)
+#print(text_upper)
+#print(text)
+
+
+
+#ent = input("Enter the sentence: ")
+#
+#letters = 0
+#digits = 0
+#
+#for j in ent:
+#    if j.isalpha():
+#        letters += 1
+#    elif j.isdigit():
+#        digits += 1
+#
+#print("Count of letters:", letters)
+#print("Count of digits:", digits)
+#
+#t = input("Enter the sentence: ")
+#sym = input("Enter symbol for search: ")
+#
+#count = 0
+#
+#for i in t:
+#    if i == sym:
+#        count += 1
+#
+#print("Occurences of characters:", count)
+#
+#
+#text = input("Enter text: ")
+#
+#result = ""
+#i = len(text) - 1
+#
+#while i >= 0:
+#    result += text[i]
+#    i -= 1
+#
+#print("String inversed:", result)
+#
+#
+#tect = input("Enter the stroke: ")
+#wrd = input("Enter word for search: ")
+#
+#count = 0
+#length = len(wrd)
+#
+#for i in range(len(text) - length + 1):
+#    if text[i:i+length] == wrd:
+#        count += 1
+#
+#print("Occurences of word:", count)
+
+
+
+text = input("Enter the stroke: ")
+old_wrd = input("Enter word for search: ")
+new_wrd = input("Enter word for change: ")
+
+result = ""
+i = 0
+
+while i < len(text):
+    if text[i:i+len(old_wrd)] == old_wrd:
+        result += new_wrd
+        i += len(old_wrd)
+    else:
+        result += text[i]
+        i += 1
+
+print("Result:", result)
+
+text = input("Enter the text: ")
+old_word = input("Word to change: ")
+new_word = input("New word: ")
+
+result = ""
+i = 0
+
+while i < len(text):
+
+    if text[i:i + len(old_word)] == old_word:
+
+        result += new_word
+        i += len(old_word)
+
+
+    else:
+        exit()
+
+print("Result:", result)
