@@ -1,0 +1,90 @@
+print("Menu of a figure")
+print("1 - А")
+print("2 - Б")
+print("3 - В")
+print("4 - Г")
+print("5 - Д")
+print("6 - Е")
+print("7 - Ж")
+print("8 - З")
+print("9 - И")
+print("10 - К")
+
+symb = "*"
+space = " "
+choice = int(input("Choose your figure: "))
+
+
+if choice == 1:
+    print("Figure А")
+    size = int(input("Enter width: "))
+    for i in range(size):
+        print(space * i + symb * (size - i))
+
+elif choice == 2:
+    print("Figure Б")
+    size = int(input("Enter width: "))
+    for i in range(1, size + 1):
+        print(symb * i)
+
+elif choice == 3:
+    print("Figure В")
+    size = int(input("Enter width: "))
+    for i in range(size):
+        print(space * i + symb * (size - i))
+
+
+elif choice == 4:
+    print("Figure Г")
+    size = int(input("Enter width: "))
+    for i in range(size):
+        print(space * (size - i - 1) + symb * (i + 1))
+
+
+elif choice == 5:
+    print("Figure Д")
+    size = int(input("Enter width: "))
+    for i in range(size):
+        print(symb * (i + 1) + space * (size - i - 1))
+    for i in range(size):
+        print(space * i + symb * (size - i))
+
+
+elif choice == 6:
+    print("Figure Е")
+    size = int(input("Enter width: "))
+    for i in range(size):
+        print(symb * size)
+
+elif choice == 7:
+    print("Figure Ж")
+    size = int(input("Enter width: "))
+    for i in range(size):
+        print(symb * (size - i) + space * i)
+
+
+elif choice == 8:
+    print("Figure З")
+    size = int(input("Enter width: "))
+    for i in range(size):
+        print(space * (size - i - 1) + symb * (i + 1))
+    for i in range(size):
+        print(space * i + symb * (size - i))
+
+
+elif choice == 9:
+    print("Figure И")
+    size = int(input("Enter width: "))
+    while size > 0:
+        print(symb * size)
+        size -= 1
+
+
+elif choice == 10:
+    print("Figure К")
+    size = int(input("Enter width: "))
+    for i in range(size):
+        print(symb * size)
+
+else:
+    print("We don`t have such a choice")
