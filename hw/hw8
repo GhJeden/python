@@ -1,0 +1,100 @@
+"""
+text = input("Enter your sentences: ")
+
+text = text.replace("!", ".").replace("?", ".")
+
+sentences = text.split(".")
+
+count = 0
+for s in sentences:
+    if s.strip() != "":
+        count += 1
+
+print("Amount of sentences:", count)
+"""
+"""
+text = input("Enter the sentence: ")
+
+cleaned = ""
+
+for i in text:
+    if i.isalnum():
+        cleaned += i.lower()
+
+if cleaned == cleaned[::-1]:
+    print("The sentence is a palindrome")
+else:
+    print("The sentence isn`t a palindrome")
+
+"""
+"""
+reserved_words = ["if", "else", "for", "while", "def", "class", "return"]
+
+text = input("Enter the text: ")
+
+words = text.split()
+
+for i in range(len(words)):
+    clean_word = words[i].strip(".,!?()")
+    if clean_word in reserved_words:
+        words[i] = words[i].replace(clean_word, clean_word.upper())
+
+new_text = " ".join(words)
+
+print("Remaked text:")
+print(new_text)
+"""
+"""
+text = input("Enter the sentence: ")
+a = input("Enter first symbol: ")
+b = input("Enter second symbol: ")
+
+p1 = text.find(a)
+p2 = text.find(b)
+
+if p1 != -1 and p2 != -1:
+    if p1 < p2:
+        new_text = text[:p1] + text[p2+1:]
+    else:
+        new_text = text[:p2] + text[p1+1:]
+
+    print("Result:")
+    print(new_text)
+else:
+    print("Symbol hasn`t been found.")
+"""
+
+"""
+text = input("Enter the text: ")
+symbols = input("Enter the bond of symbols: ")
+
+words = text.split()
+result = []
+
+for word in words:
+    delete = False
+    
+    for s in symbols:
+        if s in word:
+            delete = True
+            break
+    
+    if not delete:
+        result.append(word)
+
+print("Result:")
+print(result)
+"""
+
+text = input("Enter the text: ")
+
+words = text.split()
+
+words.reverse()
+
+reversed_text = ""
+for word in words:
+    reversed_text += word + " "
+
+print("Reversed text:")
+print(reversed_text)
