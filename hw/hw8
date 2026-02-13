@@ -1,10 +1,13 @@
 """
 text = input("Enter your sentences: ")
 
+# Заменяеи знаки конца предложения на точку.
 text = text.replace("!", ".").replace("?", ".")
 
+# Разделяем текст по точкам
 sentences = text.split(".")
 
+#Убирает пустые елементы
 count = 0
 for s in sentences:
     if s.strip() != "":
@@ -15,12 +18,14 @@ print("Amount of sentences:", count)
 """
 text = input("Enter the sentence: ")
 
+#Оставляем только буквы и цифры
 cleaned = ""
 
 for i in text:
-    if i.isalnum():
+    if i.isalnum(): # проверка на букву или цифру
         cleaned += i.lower()
 
+# проверяем правильность
 if cleaned == cleaned[::-1]:
     print("The sentence is a palindrome")
 else:
@@ -35,10 +40,13 @@ text = input("Enter the text: ")
 words = text.split()
 
 for i in range(len(words)):
+    # Убираем возможные разделительные знаки
     clean_word = words[i].strip(".,!?()")
     if clean_word in reserved_words:
         words[i] = words[i].replace(clean_word, clean_word.upper())
 
+
+# Соединяем слова обратно в текст
 new_text = " ".join(words)
 
 print("Remaked text:")
@@ -49,9 +57,11 @@ text = input("Enter the sentence: ")
 a = input("Enter first symbol: ")
 b = input("Enter second symbol: ")
 
+# находим начальные символы
 p1 = text.find(a)
 p2 = text.find(b)
 
+# проверяем если оба символа найдены
 if p1 != -1 and p2 != -1:
     if p1 < p2:
         new_text = text[:p1] + text[p2+1:]
@@ -90,8 +100,10 @@ text = input("Enter the text: ")
 
 words = text.split()
 
+#Переворачивает список
 words.reverse()
 
+# Собираем слова в ряд
 reversed_text = ""
 for word in words:
     reversed_text += word + " "
