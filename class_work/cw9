@@ -1,0 +1,109 @@
+collection = list()
+collection = []
+
+print(type(collection))
+
+collection = [10, 10.5, 'text', True]
+
+#print(collection[0].upper())
+
+fruits = ['apple', 'lemon', 'pamelo', 'mango', 'pineapple', 'watermelon']
+
+#print(', '.join(fruits))
+#fruits.append('kiwi')
+#print(', '.join(fruits))
+#fruits.extend(['orange', 'banana'])
+#print(', '.join(fruits))
+#fruits.insert(3, 'watermelon')
+#print(', '.join(fruits))
+#
+#apple_count = fruits.count('apple')
+#print(apple_count)
+#watermelon_count = fruits.count('watermelon')
+#print(watermelon_count)
+#grapefruit_count = fruits.count('grapefruit')
+#print(grapefruit_count)
+#
+#while 'watermelon' in fruits:
+#    fruits.remove('watermelon')
+#
+#print(', '.join(fruits))
+#
+#if 'grapefruit' in fruits:
+#    fruits.remove('grapefruit')
+
+#tuple1 = tuple()
+#print(type(tuple1))
+#
+#fruits_tuple = tuple(fruits)
+#print(fruits_tuple)
+#print(type(fruits_tuple))
+
+# fruits_tuple[2] = 'lkasdjflk;ajs'
+
+#fruits_tuple = tuple(['apple', 'orange'])
+#print(fruits_tuple)
+
+#print(fruits[0])
+#print(fruits[1:3])
+#print(fruits[:4])
+#print(fruits[1:])
+
+
+
+numbers = input("Enter numbers of collection with button Space: ").split()
+for i in range(len(numbers)):
+    numbers[i] = int(numbers[i])
+
+total = 0
+for num in numbers:
+    total += num
+print("Sum:", total)
+
+average = total / len(numbers) if len(numbers) > 0 else 0
+print("Average arifmetic:", average)
+
+
+numbers = input("Enter numbers of collection with button Space: ").split()
+for i in range(len(numbers)):
+    numbers[i] = int(numbers[i])
+
+num = int(input("Enter the number: "))
+
+count_num = numbers.count(num)
+print(f"Number {num} is in {count_num} times")
+
+
+numbers3 = input("Enter numbers of collection (only positive) with buttom Space: ").split()
+for i in range(len(numbers3)):
+    numbers3[i] = int(numbers3[i])
+
+positive_sum = 0
+for num in numbers3:
+    if num > 0:
+        positive_sum += num
+    else:
+        exit("Only positive numbers")
+print("Sum:", positive_sum)
+
+numbers = input("Enter numbers of collection with button Space: ").split()
+for i in range(len(numbers)):
+    numbers[i] = int(numbers[i])
+
+index = []
+for i in range(len(numbers)):
+    if numbers[i] % 2 == 0:
+        index.append(i)
+    else:
+        exit()
+print("Answer:",index)
+
+numbers = input('Enter numbers of collection with button Space: ').split()
+
+unique = []
+
+for i in range(len(numbers)):
+    if numbers.count(numbers[i]) == 1:
+        unique.append(int(numbers[i]))
+
+print("Unique:", unique)
