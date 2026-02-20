@@ -1,0 +1,37 @@
+# Entering the list of numbers
+input_str = input("Enter list of numbers(like 1,2,3,4,5): ")
+numbers = [int(x.strip()) for x in input_str.split(',')]
+
+# Entering amount of positions
+N = int(input("Enter number of position N for shifting it on the right: "))
+
+# Cycle for shifting on the right: last N numbers + first till the end
+shifted = numbers[-N % len(numbers):] + numbers[:-N % len(numbers)]
+
+# Виведення результату
+print("Shifted list:", shifted)
+
+
+
+import random
+
+list1 = [random.randint(1, 20) for i in range(10)]
+list2 = [random.randint(1, 20) for i in range(10)]
+
+# Numbers from all lists (concotenation)
+union_all = list1 + list2
+
+# Numbers without repetitions
+union_unique = list(set(list1) | set(list2)) # We use set for better deleting information from lists
+
+# Common numbers
+common = list(set(list1) & set(list2))
+
+# Unique numbers from the two of lists
+only_list1 = list(set(list1) - set(list2))
+only_list2 = list(set(list2) - set(list1))
+
+# Min/Max of every list
+min_max_list1 = [min(list1), max(list1)]
+min_max_list2 = [min(list2), max(list2)]
+min_max_both = min_max_list1 + min_max_list2
