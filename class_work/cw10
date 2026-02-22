@@ -1,0 +1,251 @@
+#employees = {
+#    '1': {
+#        'name': 'Anton Chigur',
+#        'position': 'I don`t kill people',
+#        'salary': 20000
+#    },
+#    '2':{
+#        'name': 'Anastasia',
+#        'position': 'Team lead',
+#        'salary': 90000
+#    },
+#    '3': {
+#        'name': 'Kyrylo',
+#        'position': 'Senior .NET Developer',
+#        'salary': 1150
+#    }
+#}
+#
+#print(employees['2']['position'])
+
+
+
+#new_dictionary = dict()
+#new_dictionary = {
+#    'key': 'value',
+#    10: 15.8
+#}
+#
+#user = {
+#    'Username': 'Admin',
+#    'age': 29
+#}
+#
+#print(user)
+#print(type(user))
+
+#contacts = {
+#    'Antony': '0506959068',
+#    'Elizabeth': '0474838458',
+#    'Sergey': '0550404033'
+#}
+#
+#print(contacts['Elizabeth'])
+#contacts['Sergey'] = '0650499596'
+#print(contacts['Sergey'])
+#
+#contacts['Anastasia'] = '0500440405'
+#print(contacts['Anastasia'])
+#
+#contacts.update({'Anthony': '0670450044', 'Timothy': '0897477744'})
+#
+#print(contacts)
+#
+#print(contacts.keys())
+#print(contacts.values())
+#print(contacts.items())
+#
+#contacts.pop('Anastasia')
+#contacts.popitem()
+#contacts.clear()
+#
+#for i in contacts:
+#    print(f"{i}: {contacts{i}}")
+#
+#contacts_copy = contacts
+#contacts.copy['Timur'] = '0560985342'
+#for i in contacts:
+#    print(f'{i}: {contacts{i}}')
+
+#my_set = set()
+#my_set = set( ['apple', 'cherry', 'mango'] )
+#
+#my_set = { 'apple', 'cherry', 'mango', 'mango' }
+#
+#print(my_set)
+#print(type(my_set))
+#
+## print(my_set[0])
+## my_set[1] = 'pamelo'
+#
+#print(len(my_set))
+#
+#new_set = {True, 1, 0, False}
+#print(len(new_set))
+#print(new_set)
+#
+#for item in my_set:
+#    print(item)
+#
+#print('apple' in my_set)
+#print('banana' not in my_set)
+
+#first = {'apple', 'mango', 'cherry', 'kiwi'}
+#second = {'mango', 'pamelo', 'kiwi', 'orange'}
+#
+#frozen_food = frozenset(first | second)
+#
+#print(frozen_food)
+#print(type(frozen_food))
+
+#intersection = first.intersection(second)
+#intersection = first & second # оператор &
+
+#print(intersection)
+
+# union = first.union(second)
+# union = first | second # оператор or
+# print(union)
+#print(first)
+#print(second)
+
+#First practical work
+
+#nums = int(input("Enter the numbers(like 1,2,3,4,4,5,5,6): "))
+#unique_nums = set(nums)
+#print(unique_nums)
+
+#set1 = set()
+#set2 = set()
+#
+#print("Enter 10 numbers for first plural:")
+#for i in range(10):
+#    num = int(input())
+#    set1.add(num)
+#
+#print("Enter 10 numbers for second plural:")
+#for i in range(10):
+#    num = int(input())
+#    set2.add(num)
+#
+#print("Common elements:", set1 & set2)
+#print("Difference:", set1 - set2)
+#print("Association:", set1 | set2)
+#
+#word1 = input("Enter first word: ")
+#word2 = input("Enter second word: ")
+#
+#if set(word1) == set(word2):
+#    print("Words is an anagrams")
+#else:
+#    print("Words isn`t an anagrams")
+
+
+# Second practical work
+
+#contacts = {}
+#
+#while True:
+#    print("\n1 - Add contact")
+#    print("2 - Delete contact")
+#    print("3 - Change contact")
+#    print("4 - List of contacts")
+#
+#
+#    user_choice = int(input("Category -> "))
+#
+#    if user_choice == 1:
+#        name = input("Enter the name: ")
+#        phone = input("Enter the phone number: ")
+#
+#        if name in contacts:
+#            print("We already have that contact")
+#        else:
+#            contacts[name] = phone
+#            print("The contact was added")
+#
+#
+#    elif user_choice == 2:
+#        name = input("Enter the name: ")
+#
+#        if name in contacts:
+#            del contacts[name]
+#            print("Done")
+#        else:
+#            print("We don`t have this contact")
+#
+#    elif user_choice == 3:
+#        name = input("Enter the name: ")
+#
+#        if name in contacts:
+#            new_phone = input("Enter new phone number: ")
+#            contacts[name] = new_phone
+#            print("Contact was changed")
+#        else:
+#            print("We don`t have contact like this")
+#
+#    elif user_choice == 4:
+#        if contacts:
+#            print("\nList of contacts:")
+#            for name, phone in contacts.items():
+#                print(f"{name} : {phone}")
+#        else:
+#            print("There`s no contacts.")
+#
+#
+#
+#    else:
+#        print("The command was not registered!")
+#        print("#" * 27)
+
+
+#user_text = input("Enter the text -> ")
+#user_text = user_text.lower()
+#words = user_text.split()
+#
+#word_count = {}
+#
+#for word in words:
+#    if word:
+#        if word in word_count:
+#            word_count[word] += 1
+#        else:
+#            word_count[word] = 1
+#
+#print("Amount of words:")
+#for word, count in word_count.items():
+#    print(f"{word} : {count}")
+#
+#rates = {"USD": 40.2, "EUR": 42.5, "PLN": 9.6}
+#
+#currency = input("Enter the value (USD, EUR, PLN): ")
+#amount_uah = float(input("Enter the sum in UAH: "))
+#
+#if currency in rates:
+#    result = amount_uah / rates[currency]
+#    print("Equivalent:", round(result, 2), currency)
+#else:
+#    print("We don`t have that currency")
+
+
+
+translation = {
+    'hi': 'салам алейкум',
+    'cat': 'кошатзэ',
+    'dog': 'пес патрон',
+    'banana': 'бананадзе',
+    'TV': 'зомбоящик',
+    'stick': 'палка справедливости',
+    'phone': 'телефин',
+    'cable': 'провод',
+    'spoon bender': 'фокусник с ложкой'
+}
+
+word = input("Enter word on English, please: ")
+
+word = word.lower()
+
+if word in translation:
+    print(f"Translation: {translation[word]}")
+else:
+    print("Error: the translation was not found")
