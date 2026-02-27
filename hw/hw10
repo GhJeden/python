@@ -1,0 +1,75 @@
+"""
+# Список наших слов и их перевод
+translation = {
+    'cat': 'Кіт',
+    'dog': 'Собака',
+    'rat': 'Щур',
+    'television': 'Телебачення',
+    'left': 'Ліво',
+    'right': 'Право',
+    'up': 'Уверх',
+    'down': 'Униз',
+    'street': 'Вулица',
+    'human': 'Людина',
+    'animal': 'Тварина',
+    'plant': 'Рослина',
+    'apple': 'Яблуко',
+    'pear': 'Груша',
+    'peach': 'Персик',
+    'banana': 'Банан',
+    'computer': "Комп'ютер",
+    'phone': 'Телефон',
+    'cucumber': 'Огурець',
+    'ethics': 'Етика, мораль',
+    'eager': 'Прагнути',
+    'constantly': 'Постійно',
+    'picturesque': 'Колоритний, живописний',
+    'asset': 'Маєток',
+    'conscientious': 'Добросовісний'
+}
+
+word = input("Enter word on English, please: ")
+
+word = word.lower()
+
+# Проверка на наличие перевода, в случае не нахождения выводит ошибку
+if word in translation:
+    print(f"Translation: {translation[word]}")
+else:
+    print("Error: the translation was not found")
+
+"""
+
+
+
+# Ввод количества друзей
+N = int(input("Enter amount of friends: "))
+
+# Список множеств игр друзей и ваших
+all_games = []
+
+print("Enter game names of all friends (through ,):")
+
+# Записывание игр друзей
+for i in range(N):
+    friend_games_str = input(f"Friends games {i+1}: ").strip()
+    friend_games = set(friend_games_str.split(','))
+    all_games.append(friend_games)
+
+# Записывание названных игр
+your_games_str = input("Your games: ").strip()
+your_games = set(your_games_str.split(','))
+all_games.append(your_games) # аппенд добавляет один элемент в конец списка, в нашем случае - сразу несколько
+
+# Поиск общих игр (пересечение множеств)
+common_games = all_games[0]
+for games_set in all_games[1:]:
+    common_games = common_games.intersection(games_set) # интерсекшн возвращает множества, возвращая их как одно целое множество, оставляя только те значения, которые имеют свой повтор или копию, кратко излагая, возвращая элементы, которые общие для множества
+
+# Вывод результата
+print("\nGames, which all players can play together:")
+if common_games:
+    for game in sorted(common_games):
+        print(f"- {game.strip()}")
+else:
+    print("There are no joint games.")
