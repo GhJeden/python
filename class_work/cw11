@@ -1,0 +1,200 @@
+#def print_greeting():
+#    print('==========================')
+#    print('=====  Hello, User!  =====')
+#    print('==========================')
+#
+#
+#print_greeting()
+#
+#def print_named_greeting(name):
+#    print('==========================')
+#    print(f'=====  Hello, {name}!  =====')
+#    print('==========================')
+#
+#
+#print_named_greeting('vladimer')
+#print_named_greeting('anton chigur')
+#
+##print_named_greeting(10)
+#
+#def my_sum(num1: float, num2: float) -> float | None:
+#    if type(num1) != type(float) or type(num2) != type(float):
+#        return
+#    return num1 + num2
+#
+#result = my_sum(10.0, 12.0)
+#print(result)
+
+#def print_full_name(last_name, first_name):
+#    print('Full name:', last_name, first_name)
+#
+#print_full_name('kovalchuk', 'anton')
+#print_full_name(last_name='kovalchuk', first_name='anton')
+#
+#def my_animal(type, name, age):
+#    print(f'I have {type} named {name}. Age: {age}')
+#
+#my_animal('dog', age=10, name='Ammo')
+
+#def only_positional(param, /):
+#    print(param)
+#
+#only_positional(param=10)
+#
+#def only_named(*, param):
+#    print(param)
+#
+#only_key_word(param=10)
+
+
+#print(10, 23, 34)
+#print(10, 1)
+#print(10,20,3094,57,47)
+
+#def my_sum(*numbers):
+#    result = 0
+#    for i in numbers: 
+#        result += i
+#    return result
+#    
+#
+#print(my_sum(10,12,14))
+#print(my_sum(10))
+#print(my_sum(10,10,10,10,10,10,10,10,10))
+#
+#def my_func(**kwargs):
+#    for i in kwargs:
+#        print(i, kwargs[i], sep=':')
+#
+#my_func(name='vova', age=22, pet='cat')
+
+#def unpack_positional(a,b,c):
+#    print(a,b,c, sep=', ')
+#
+#
+#fruits = ['apple', 'orange', 'banana']
+#unpack_positional(*fruits)
+#
+#
+#def unpack_kw_args(red, green, yellow):
+#    print(red, green, yellow)
+#
+#fruits = {
+#    'red': 'apple',
+#    'green': 'pear',
+#    'yellow': 'banana'
+#}
+#
+#unpack_kw_args(**fruits)
+
+#def enclosing_func():
+#    enclosing_var = 10
+#    def inner_func():
+#        print(enclosing_var)
+#    inner_func()
+#
+#enclosing_func()
+
+#global_var = 12
+
+#def local_func(local_param):
+#    global gloval_var
+#    global_var = 50
+#    local_var = 10
+#    print(local_var)
+#    print(global_var)
+#
+#local_func(10)
+#print(global_var)
+
+
+
+
+#def do_smth():
+#    print('We do something...')
+#
+#
+#def main():
+#    print('Start of work!')
+#    do_smth()
+#    print("End of work!")
+#
+#if __name__ == '__main__':
+#    main()
+
+
+def write_text():
+    print('''"Don't let the noise of others' opinions
+          drown out your onw inner voice."
+            Steve Jobs''')
+
+write_text()
+
+
+def count_unpair(num1, num2):
+    num1 = input("Write first num: ")
+    num2 = input("Write second num: ")
+    start = min(num1, num2)
+    end = max(num1, num2)
+
+    for i in range(start, end + 1):
+        if i % 2 != 0:
+            print(i, end=" ")
+        print()
+
+count_unpair(num1=10, num2=20)
+
+
+def draw_line(length, direction, symbol):
+    """
+    length: int
+    direction: str
+    symbol: str
+    """
+    if direction.lower() == 'h':
+        print(symbol * length)
+    elif direction.lower() == 'v':
+        for _ in range(length):
+            print(symbol)
+    else:
+        print('Error, direction must be "h"(horizontal) or "v"(vertical)')
+
+
+print('Horizontal line: ')
+draw_line(10, 'h', '*')
+
+print('Vertical line: ')
+draw_line(5, 'v', '|')
+
+
+
+def ret_num(a, b, c, d):
+    return max(a, b, c, d)
+
+result = ret_num(10, 50, 3, 42)
+print(f"Max number: {result}")
+
+def kruty_nomery(n):
+    if n <= 1:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+
+numb = int(input("Enter the number: "))
+
+print(kruty_nomery(numb))
+
+def is_lucky(n):
+    if not (100000 <= n <= 999999):
+        return False
+    
+    s1 = (n // 100000) + ((n // 10000) % 10) + ((n // 1000) % 10)
+    
+    s2 = ((n // 100) % 10) + ((n // 10) % 10) + (n % 10)
+    
+    return s1 == s2
