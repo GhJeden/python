@@ -1,0 +1,226 @@
+#def get_discounted_prices(prices: list):
+#    discounted_prices = []
+#
+#    for price in prices:
+#        if price > 100:
+#            discounted_prices.append(price * 0.8)
+#    
+#    return discounted_prices
+#
+#original_prices = [50, 120, 80, 200, 300]
+#discounted_prices = list(map(lambda a: a * 0.8, filter(lambda a: a > 100, original_prices)))
+#
+#
+#def recursion():
+#    print('recursion')
+#    recursion()
+#
+##recursion()
+#
+##def func_b():
+##    print('b calls a')
+##    func_a()
+##
+##def func_a():
+##    print('a calls b')
+##    func_b()
+#
+#def factorial_loop(n):
+#    result = 1
+#    for i in range(1, n +1):
+#        result *= i
+#    return result
+#
+##print(factorial_loop(5))
+#
+#def factorial_recursion(n):
+#    if n == 0 or n == 1:
+#        return 1
+#    else:
+#        return n * factorial_recursion(n - 1)
+#    
+##print(factorial_recursion(5))
+#
+#def say_hello():
+#    print('Hello!')
+#
+#func_var = say_hello
+#
+#def some_function(callback):
+#    print('some_func calls it`s callback')
+#    callback()
+#
+#def log_file(message):
+#    pass
+#
+#def log_console(message):
+#    pass
+#
+#def log_database(message):
+#    pass
+#
+#def do_some_work(log_callback):
+#    print('Doing something...')
+#    print('Done!')
+#    log_callback('logging message')
+#
+##sum = lambda a, b: a + b
+##
+###print(sum(10,12))
+##
+##operations = {
+##    "+": lambda a, b: a + b,
+##    "-": lambda a, b: a - b,
+##    "*": lambda a, b: a * b
+##}
+##
+##num1 = float(input("Enter first number: "))
+##num2 = float(input("Enter second number: "))
+##action = input('Choose operation(+,-,*): ')
+##
+##if action in operations:
+##    print(operations[action](num1, num2))
+##else:
+##    print('Incorrect operation!')
+#
+#
+##do_some_work(log_console)
+##do_some_work(log_database)
+##do_some_work(log_file)
+##
+##some_function(say_hello)
+#
+#
+##func_var() #оператор виклику
+##print(type(func_var))
+#
+#
+#tax_rate = 0.2
+#
+#def calculate_tax_impure(amount):
+#    return amount * tax_rate
+#
+#print(calculate_tax_impure(100))
+#
+#def calculate_tax_pure(amount, tax_rate):
+#    return amount * tax_rate
+#
+## print(calculate_tax_pure(10000, 0.3))
+#
+#def add_product_impure(cart: list, product: str):
+#    cart.append(product)
+#    return cart
+#
+#def add_product_pure(cart: list, product: str):
+#    new_cart = cart.copy()
+#    new_cart.append(product)
+#    return new_cart
+#
+#my_cart = ['apple', 'banana']
+## add_product_impure(my_cart, 'orange')
+#new_cart = add_product_pure(my_cart, 'orange')
+#
+#print(new_cart)
+#print(my_cart)
+#
+##my_set1 = {1, 2, 3}
+##my_set2 = {3, 4, 5}
+##
+##union = my_set1.union(my_set2)
+##print(union)
+##print(my_set1)
+##
+##my_set1.update(my_set2)
+##print(my_set1)
+#
+#def create_multiplier(factor):
+#    def multiplier(num):
+#        return num * factor
+#    return multiplier
+#
+#doubler = create_multiplier(2)
+#tripler = create_multiplier(3)
+#
+##print(doubler(4))
+##print(tripler(10))  
+#
+#numbers = [10, 5, 43, 68, 8, 90, 99, 100, 102]
+#
+#even_numbers = list(filter(lambda a: a % 2 == 0, numbers))
+#
+#print(even_numbers)
+#
+#def changeupper(func):
+#    def inner():
+#        result = func()
+#        return result.upper()
+#
+#def my_function():
+#    return 'Hello Sally!'
+
+
+# first task
+
+def recursion(base, expo):
+    if expo == 0:
+        return 1
+    elif expo > 0:
+        return base * recursion(base, expo - 1)
+    else:
+        return 1 / recursion(base, -expo)
+    
+print(recursion(2, 3))
+
+# second task
+
+def is_leap(year):
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+
+def days_in_month(year, month):
+    if month in [4, 6, 9, 11]:
+        return 30
+    elif month == 2:
+        return 29 if is_leap(year) else 28
+    else:
+        return 31
+    
+def date_to_absolute_date(day, month, year):
+    total_days = day
+    for year in range(1, year):
+        total_days += 366 if is_leap(year) else 365
+    for month in range(1, month):
+        total_days += days_in_month(year, month)
+        return total_days
+    
+
+def days_diff(day1, month1, year1, day2, month2, year2):
+    abs_date1 = date_to_absolute_date(day1, month1, year1)
+    abs_date2 = date_to_absolute_date(day2, month2, year2)
+    return abs(abs_date1 - abs_date2)
+
+result = days_diff(1, 1, 2026, 8, 3, 2026)
+print(f'Difference in days: {result}')
+
+# third task
+
+import random
+
+num = [random.randint(1, 100) for _ in range(10)]
+
+def find_min(id):
+    if id > len(num) - 10:
+        return id, float('inf')
+    
+    current_sum = sum(num[id : id + 10])
+
+    next_id, next_min_sum = find_min(id + 1)
+
+    if current_sum < next_min_sum:
+        return id, current_sum
+    else:
+        return next_id, next_min_sum
+    
+best_index, min_sum = find_min(0)
+print(f'Beginning on index: {best_index}')
+print(f'Sum: {min_sum}')
+
