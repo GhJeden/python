@@ -1,0 +1,127 @@
+#my_list = ['orange', 'apple', 'banana']
+
+#print(my_list[0])
+
+#def recursion():
+#    recursion()
+
+# recursion()
+
+# print(10 / 0)
+#operators = ['+', '-', '*', '/']
+#
+#while True:
+#    try:
+#        num1 = float(input('Enter first number: '))
+#        num2 = float(input('Enter second number: '))
+#        action = input('Enter operation (+, -, *, /): ')
+#
+#        if action not in operators:
+#            raise Exception(action)
+#
+#        match action:
+#            case '+': print(f'{num1} + {num2} = {num1 + num2}')
+#            case '-': print(f'{num1} - {num2} = {num1 - num2}')
+#            case '*': print(f'{num1} * {num2} = {num1 * num2}')
+#            case '/': 
+#                if num2 == 0:
+#                    print('Cannot divide by zero')
+#                else:
+#                    print(f'{num1} / {num2} = {num1 / num2}')
+#    except ValueError:
+#        print('Incorrect number!')
+#    except Exception as ex:
+#        print(f'Invalid operation!{ex.args[0]}')
+#    finally:
+#        reapeat = input('Do you want to repeat? (y/n): ')
+#        if reapeat.lower() == 'n':
+#            break
+
+# First task
+
+#n1 = float(input('Enter first number(without sale): '))
+#n2 = float(input('Enter second number(sale): '))
+#try:
+#    result = n1 * n2 / 100
+#    print(f'{n1} * {n2} / 100 = {result}')
+#except ZeroDivisionError:
+#    print('Cannot divide by zero')
+#except ValueError:
+#    print('Incorrect number!')
+
+# Second task
+
+#num1 = float(input('Enter sum in dollars: '))
+#num2 = float(input('Enter exchange rate in euros: '))
+#try:
+#    result = num1 * num2
+#    print(f'{num1} * {num2} = {result}')
+#
+#    if num2 == 0:
+#        print('Exchange rate cannot be zero')
+#
+#except ValueError:
+#    print('Incorrect number!')
+#
+#finally: 
+#    print('Thank you for using our currency converter!')
+#
+
+# Third task
+
+try:
+    marks = input("Enter your grades (separated by space): ")
+
+    grades = [int(x)
+    for x in marks.split()]
+
+    avg = sum(grades) / len(grades)
+
+except ValueError:
+    print("You entered an invalid grade! Please enter only numbers.")
+except ZeroDivisionError:
+    print("You didn't enter any grades!")
+
+finally:
+    print(f"Your average grade: {avg} \n Your grades: {grades} ")
+
+# Fourth task
+
+num_for_pay = float(input('Enter the amount to pay(the sum needs to be divisible by 10): '))
+try:
+    if num_for_pay < 0:
+        raise Exception('Incorrect amount!')
+    if num_for_pay % 10 != 0:
+        raise Exception('Amount must be divisible by 10!')
+    print(f'You need to pay: {num_for_pay}')
+except Exception as e:
+    print(f'Error: {e}')
+finally:
+    print('Thank you for using our payment system!')
+
+# Fifth task
+
+num_of_delivery = input('Enter the number of delivery(should start with ORD): ')
+try:
+    if num_of_delivery != 'ORD':
+        raise Exception('Incorrect number of delivery, it has to have a ORD on start!')
+    print(f'Number of delivery: {num_of_delivery}')
+except Exception as e:
+    print(f'Error: {e}')
+finally:
+    print('Thank you for using our delivery system!')
+
+# Sixth task
+
+num = float(input('Enter a numbers(separated by spaces): '))
+try:
+    numbers = num.split()
+    numbers = [float(number) for number in numbers]
+    average = sum(numbers) / len(numbers)
+    print(f'Average is: {average}')
+except ValueError:
+    print('Incorrect number!')
+except ZeroDivisionError:
+    print('Cannot be hollow!')
+finally:
+    print('Thank you for using our program!')
