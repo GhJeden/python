@@ -1,0 +1,91 @@
+# First task
+try:
+    n1 = float(input('Enter first number: '))
+    n2 = float(input('Enter second number: '))
+    result = n1 / n2
+    print(f'{n1} / {n2} = {result}')
+except ZeroDivisionError:
+    print('Cannot divide by zero')
+except ValueError:
+    print('Incorrect number!')
+finally:
+    print('End of program')
+
+
+# Second task
+list = [10, 20, 30, 40, 50]
+try:
+    index = int(input('Enter index of element to access: '))
+    print(f'Element at index {index} is {list[index]}')
+except IndexError:
+    print('Index out of bounds')
+except ValueError:
+    print('Invalid index!')
+finally:
+    print('End of program')
+
+# Third task
+try:
+    number = input('Enter information about sale(separated by space): ')
+    sale_info = number.split()
+    if len(sale_info) != 3:
+        raise ValueError('Invalid input format')
+    product = sale_info[0]
+    quantity = int(sale_info[1])
+    price = float(sale_info[2])
+    total = quantity * price
+    print(f'Sale information: {product}, Quantity: {quantity}, Price: {price}, Total: {total}')
+except ValueError as e:
+    print(f'Error: {e}')
+except Exception as e:
+    print(f'Unexpected error: {e}')
+finally:
+    print('End of program')
+
+# Fourth task
+try:
+    num1 = float(input('Enter your number to deal with square root: '))
+    if num1 < 0:
+        raise Exception('Number must be a positive value')
+    result = num1 ** 0.5
+    print(f'Square root of {num1} is {result}')
+except ValueError:
+    print('Invalid number!')
+except Exception as e:
+    print(f'Unexpected error: {e}')
+finally:
+    print('End of program')
+
+# Fifth task
+try:
+    product = input('Enter product name, quantity, and price (separated by space): ')
+    product_info = product.split()
+    if len(product_info) != 3:
+        raise ValueError('Invalid input format')
+    product_name = product_info[0]
+    quantity = int(product_info[1])
+    price = float(product_info[2])
+    total = quantity * price
+    print(f'Product: {product_name}, Quantity: {quantity}, Price: {price}, Total: {total}')
+except ValueError as e:
+    print(f'Error: {e}')
+except Exception as e:
+    print(f'Unexpected error: {e}')
+finally:
+    print('End of program')
+
+# Sixth task
+import random
+try:
+    def connect_to_server():
+        if random.choice([True, False]):
+            raise ConnectionError('Failed to connect to server')
+        else:
+            print('Connected to server successfully')
+    connect_to_server()
+except ConnectionError as e:
+    print(f'Error: {e}')
+except Exception as e:
+    print(f'Unexpected error: {e}')
+finally:    
+    print('Try was ended')
