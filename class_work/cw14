@@ -1,0 +1,184 @@
+#file_path = "test.txt"
+
+# file = open(file_path, "r")
+
+# file.close()
+
+# with open(file_path, 'a') as f:
+#     print("File created successfully!")
+
+# читання
+#with open("new_file.txt", 'r') as file:
+#    all_text = file.read(10)
+#    print(all_text)
+#
+#with open("new_file.txt", 'r') as file:
+#    print(file.readline().strip())
+#    print(file.readline().strip())
+#
+#with open("new_file.txt", 'r') as file:
+#    for line in file:
+#        print(line.strip())
+#
+#with open("new_file.txt", 'r') as file:
+#    lines = file.readlines()
+#    print(lines)
+
+#file_path = "newtest.txt"
+
+#with open(file_path, 'w') as file:
+#    file.write("Hello, World!\n")
+#    file.write("This is a new file.")
+#try:    
+#    with open(file_path, 'x') as file:
+#        print("File created successfully!")
+#except FileExistsError:
+#    print("File already exists.")
+
+
+
+# First task
+
+def copy_file():
+    try:
+        with open('data.txt', 'r',) as source_file:
+            content = source_file.read()
+            
+        with open('backup.txt', 'w',) as backup_file:
+            backup_file.write(content)
+            
+        print("The file was successfully copied from data.txt to backup.txt!")
+        
+    except FileNotFoundError:
+        print("Error: File 'data.txt' not found. Please create it before running the program.")
+copy_file()
+
+
+# Second task
+
+def read():
+    file_path = "data.txt"
+    try:
+        with open(file_path, "r") as file:
+            file_content = file.read()
+            encrypt(file_content)
+    except FileNotFoundError:
+        print("File not found.")
+        file = open(file_path, "a")
+        file.close()
+
+def encrypt(file_content):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    result = ""
+
+    for list in file_content:
+        if list.lower() in alphabet:
+            c = alphabet.index(list.lower())
+            a = (c + 1) % len(alphabet)
+            b = alphabet[a]
+
+            if list.isupper():
+                b = b.upper()
+
+            result += b
+        else:
+            result += list
+
+    write(result)
+
+
+
+def write(result):
+    print(result)
+
+    with open("encrypted.txt", "w") as i:
+        i.writelines(result)
+
+if __name__ == '__main__':
+    read()
+
+# Third task
+
+def add_album():
+    artist = input("Enter artist name: ")
+    album = input("Enter album name: ")
+    year = input("Enter release year: ")
+    
+    with open("music_collection.txt", "a") as file:
+        file.write(f"{artist} | {album} | {year}\n")
+    print("Album added successfully!\n")
+
+def view_collection():
+    try:
+        with open("music_collection.txt", "r") as file:
+            albums = file.readlines()
+            if not albums:
+                print("Collection is empty.\n")
+            else:
+                print("\n--- Music Collection ---")
+                for idx, album in enumerate(albums, 1):
+                    print(f"{idx}. {album.strip()}")
+                print()
+    except FileNotFoundError:
+        print("Collection file not found.\n")
+
+def search_by_artist():
+    artist = input("Enter artist name to search: ").lower()
+    try:
+        with open("music_collection.txt", "r") as file:
+            albums = file.readlines()
+            found = [album for album in albums if artist in album.lower().split(" | ")[0]]
+            if found:
+                print("\n--- Search Results ---")
+                for album in found:
+                    print(album.strip())
+                print()
+            else:
+                print("No albums found for this artist.\n")
+    except FileNotFoundError:
+        print("Collection file not found.\n")
+
+def delete_album():
+    try:
+        with open("music_collection.txt", "r") as file:
+            albums = file.readlines()
+        
+        view_collection()
+        idx = int(input("Enter album number to delete: ")) - 1
+        
+        if 0 <= idx < len(albums):
+            albums.pop(idx)
+            with open("music_collection.txt", "w") as file:
+                file.writelines(albums)
+            print("Album deleted successfully!\n")
+        else:
+            print("Invalid number.\n")
+    except FileNotFoundError:
+        print("Collection file not found.\n")
+
+def music_manager():
+    while True:
+        print("--- Music Collection Manager ---")
+        print("1. Add album")
+        print("2. View collection")
+        print("3. Search by artist")
+        print("4. Delete album")
+        print("5. Exit")
+        
+        choice = input("Choose an option: ")
+        
+        if choice == "1":
+            add_album()
+        elif choice == "2":
+            view_collection()
+        elif choice == "3":
+            search_by_artist()
+        elif choice == "4":
+            delete_album()
+        elif choice == "5":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid option. Try again.\n")
+
+music_manager()
