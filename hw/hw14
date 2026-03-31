@@ -1,0 +1,183 @@
+# First task
+lines = ""
+
+def add(line1, line2, line3):
+    try:
+        with open("data.txt", "a", encoding="utf-8") as f:
+            f.write(line1 + "\n")
+            f.write(line2 + "\n")
+            f.write(line3 + "\n")
+    except FileNotFoundError:
+        file = open("data.txt", "a")
+        file.close()
+        add(line1, line2, line3)
+
+
+def user():
+    print("Write line 1")
+    line1 = input(": ")
+    print("Write line 2")
+    line2 = input(": ")
+    print("Write line 3")
+    line3 = input(": ")
+    add(line1, line2, line3)
+
+if __name__ == '__main__':
+    user()
+
+# Second task
+text = ""
+
+def analyze_log():
+    try:
+        with open("log.txt", "r", encoding="utf-8") as f:
+            text = f.read().lower()
+    except FileNotFoundError:
+        file = open("log.txt", "a")
+        file.close()
+    words = text.split(" ")
+
+    word_count = {}
+
+    for word in words:
+        if word == "":
+            continue
+        if word in word_count:
+            word_count[word] += 1
+        else:
+            word_count[word] = 1
+
+    sorted_words = sorted(word_count.items(), key=lambda x: x[1], reverse=True)
+
+    top_10 = sorted_words[:10]
+
+    with open("word_stats.txt", "w", encoding="utf-8") as f:
+        for word, count in top_10:
+            f.write(f"{word}: {count}\n")
+
+if __name__ == "__main__":
+    analyze_log()
+
+# Third task
+greeting = "1 - All orders\n 2- New order\n 3 - Delete order\n 4- Track by number \n 5- Update Order \n 6 -Exit "
+
+
+def gui():
+    while True:
+        print("\n" + "-" * 20)
+        print(greeting)
+
+        choice = input(": ")
+
+        if choice == "1":
+            show_orders()
+        elif choice == "2":
+            new_order()
+        elif choice == "3":
+            delete_order()
+        elif choice == "4":
+            search()
+        elif choice == "5":
+            update_order()
+        elif choice == "6":
+            break
+        else:
+            print("Option not found")
+
+
+def show_orders():
+    try:
+        with open("orders.txt", "r", encoding="utf-8") as f:
+            lines = f.readlines()
+            if not lines:
+                print("You haven't ordered anything yet")
+                return
+
+            for line in lines:
+                print(line.strip())
+    except FileNotFoundError:
+        print("File does not exist")
+
+
+def new_order():
+    order_id = input("ID: ")
+    name = input("Name: ")
+    quantity = input("Quantity: ")
+    price = input("Price: ")
+
+    with open("orders.txt", "a", encoding="utf-8") as f:
+        f.write(f"{order_id}|{name}|{quantity}|{price}\n")
+
+    print("Order accepted")
+
+
+def search():
+    order_id = input("ID: ")
+
+    try:
+        with open("orders.txt", "r", encoding="utf-8") as f:
+            for line in f:
+                if line.startswith(order_id + "|"):
+                    print("Result:", line.strip())
+                    return
+        print("Order not found")
+    except FileNotFoundError:
+        print("File not found")
+
+
+def delete_order():
+    order_id = input("Enter ID: ")
+
+    try:
+        with open("orders.txt", "r", encoding="utf-8") as f:
+            lines = f.readlines()
+
+        with open("orders.txt", "w", encoding="utf-8") as f:
+            found = False
+            for line in lines:
+                if not line.startswith(order_id + "|"):
+                    f.write(line)
+                else:
+                    found = True
+
+        if found:
+            print("Deleted")
+        else:
+            print("Not found")
+
+    except FileNotFoundError:
+        print("File does not exist")
+
+
+def update_order():
+    order_id = input("ID: ")
+
+    try:
+        with open("orders.txt", "r", encoding="utf-8") as f:
+            lines = f.readlines()
+
+        with open("orders.txt", "w", encoding="utf-8") as f:
+            found = False
+            for line in lines:
+                if line.startswith(order_id + "|"):
+                    parts = line.strip().split("|")
+
+                    new_quantity = input("Quantity: ")
+                    new_price = input("Price: ")
+
+                    f.write(f"{parts[0]}|{parts[1]}|{new_quantity}|{new_price}\n")
+                    found = True
+                else:
+                    f.write(line)
+
+        if found:
+            print("Done")
+        else:
+            print("Order not found")
+
+    except FileNotFoundError:
+        print("File does not exist")
+
+
+if __name__ == "__main__":
+    gui()
