@@ -1,0 +1,75 @@
+
+import random
+import string
+import time
+
+
+def gui():
+    print("Enter your nickname: ")
+    user_nick = input(": ")
+    print("Waiting for loading...")
+    time.sleep(2)
+    print("Waiting for loading...")
+    time.sleep(2)
+    print("The given nickname is already taken")
+    time.sleep(1)
+    nickname(user_nick)
+
+
+def nickname(user_nick):
+
+
+
+    options = []
+
+    def option1():
+        number = random.randint(100, 9999)
+        username = user_nick + str(number)
+        options.append(username)
+
+
+    option1()
+
+    def option2():
+
+        list_punctuation = "_.-"
+        punctuation = random.choice(list_punctuation)
+
+        letters = string.ascii_letters
+        letters = ''.join(random.choices(letters, k=3))
+
+        username = user_nick + punctuation + letters
+        options.append(username)
+
+    option2()
+
+    def option3():
+        prefix = ["Super", "Pro", "Max", "Mini", "Galaxy", "Ultra", "Expert", "YT"]
+        prefix = random.choice(prefix)
+
+        username = user_nick.lower()
+        username = user_nick.capitalize()
+        username = username + prefix
+        options.append(username)
+
+    option3()
+
+    def print_options():
+        #print(len(options))
+        line = "=" * 50
+        print(f"There your options: \n{line} \n{options[0]} \n{options[1]} \n{options[2]} ")
+        print("Which one do you want to use?")
+
+        nick = input(": ")
+        exit()
+
+
+    print_options()
+
+
+
+
+
+
+if __name__ == '__main__':
+    gui()
