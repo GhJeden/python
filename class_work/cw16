@@ -1,0 +1,159 @@
+#class Student:
+#    def __init__(self, name, surname, age, grades):
+#        self.name = name
+#        self.surname = surname
+#        self.age = age
+#        self.grades = grades
+#
+#    def adding_grade(self, grade):
+#        self.grades.append(grade)
+#
+#    def deleting_grade(self, grade):
+#        if grade in self.grades:
+#            self.grades.remove(grade)
+#
+#    def __str__(self):
+#        return f"Student(name={self.name}, surname={self.surname}, age={self.age}, grades={self.grades})"
+#
+#
+#class Car:
+#    def __init__(self, brand, model, speed, year):
+#        self.brand = brand
+#        self.model = model
+#        self.speed = speed
+#        self.year = year
+#
+#    def show_info(self):
+#        print(f"Brand: {self.brand}\nModel: {self.model}\nSpeed: {self.speed} km/h\nYear: {self.year}")
+#
+#    def __str__(self):
+#        return f"Car(brand={self.brand}, model={self.model}, speed={self.speed}, year={self.year})"
+#
+#def main():
+#    Student = None
+#    Car = None
+#
+#    while True:
+#        print("1. Create a student")
+#        print("2. Create a car")
+#        print("3. Show student info")
+#        print("4. Show car info")
+#        print("5. Exit")
+#
+#        choice = input("Enter your choice: ")
+#
+#        if choice == '1':
+#            name = input("Enter student's name: ")
+#            surname = input("Enter student's surname: ")
+#            age = int(input("Enter student's age: "))
+#            grades = list(map(int, input("Enter student's grades (comma separated): ").split(',')))
+#            Student = Student(name, surname, age, grades)
+#            print("Student created successfully!")
+#
+#        elif choice == '2':
+#            brand = input("Enter car brand: ")
+#            model = input("Enter car model: ")
+#            speed = int(input("Enter car speed (km/h): "))
+#            year = int(input("Enter car year: "))
+#            Car = Car(brand, model, speed, year)
+#            print("Car created successfully!")
+#
+#        elif choice == '3':
+#            if Student:
+#                print(Student)
+#            else:
+#                print("No student created yet.")
+#
+#        elif choice == '4':
+#            if Car:
+#                Car.show_info()
+#            else:
+#                print("No car created yet.")
+#
+#        elif choice == '5':
+#            print("Exiting the program.")
+#            break
+#
+#        else:
+#            print("Invalid choice. Please try again.")
+
+
+import math
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return math.pi * (self.radius ** 2)
+
+    def perimeter(self):
+        return 2 * math.pi * self.radius
+    
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+
+class Triangle:
+    def __init__(self, side1, side2, side3):
+        self.a = side1
+        self.b = side2
+        self.c = side3
+
+    def is_valid(self):
+        return (self.a + self.b > self.c) and (self.a + self.c > self.b) and (self.b + self.c > self.a)
+    
+    def area(self):
+        if not self.is_valid():
+            return 0
+        p = self.perimeter() / 2
+        return math.sqrt(p * (p - self.a) * (p - self.b) * (p - self.c))
+    
+    def perimeter(self):
+        return self.a + self.b + self.c
+    
+def main():
+    while True:
+        print("1. Create a circle")
+        print("2. Create a rectangle")
+        print("3. Create a triangle")
+        print("0. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            radius = float(input("Enter the radius of the circle: "))
+            circle = Circle(radius)
+            print(f"Area of the circle: {circle.area():.2f}")
+            print(f"Perimeter of the circle: {circle.perimeter():.2f}")
+        elif choice == '2':
+            width = float(input("Enter the width of the rectangle: "))
+            height = float(input("Enter the height of the rectangle: "))
+            rectangle = Rectangle(width, height)
+            print(f"Area of the rectangle: {rectangle.area():.2f}")
+            print(f"Perimeter of the rectangle: {rectangle.perimeter():.2f}")
+        elif choice == '3':
+            side1 = float(input("Enter the length of the first side of the triangle: "))
+            side2 = float(input("Enter the length of the second side of the triangle: "))
+            side3 = float(input("Enter the length of the third side of the triangle: "))
+            triangle = Triangle(side1, side2, side3)
+            if triangle.is_valid():
+                print(f"Area of the triangle: {triangle.area():.2f}")
+                print(f"Perimeter of the triangle: {triangle.perimeter():.2f}")
+            else:
+                print("The sides do not form a valid triangle.")
+        elif choice == '0':
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()

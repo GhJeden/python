@@ -1,0 +1,23 @@
+from class_work.characters import *
+
+# players
+anna = fighter("Anna", 60, 15)
+boris = healer("Boris", 50, 10)
+
+# enemies
+gob = goblin("Gob", 40, 8)
+vlad = vampire("Vlad", 70, 12)
+
+
+print('== Stats before fight ==')
+print(anna, boris, gob, vlad, sep='\n')
+
+gob.attack(anna)
+vlad.attack(anna)
+
+anna.attack(dracula)
+boris.heal(anna)
+
+vlad.lifesteal(anna)
+print('=== Stats after fight ===')
+print(anna, boris, goblin, dracula, sep='\n')

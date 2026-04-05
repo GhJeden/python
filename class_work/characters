@@ -1,0 +1,76 @@
+#class Animal: #identificator of class
+#    def __init__(self, name, type, sound) -> None: #constructor of class
+#        self.name = name
+#        self.type = type
+#        self.sound = sound
+#
+#    def make_sound(self): #method of class
+#        print(f"Animal named {self.name} of type {self.type} makes sound {self.sound}")
+#
+#    def __str__(self) -> str:
+#        return f'Name: {self.name}\nType: {self.type}\nSound: {self.sound}'
+#
+#animal1 = Animal("Buddy", "dog", "WOOF") 
+#animal1.make_sound()
+##print(animal1.type)
+#animal2 = Animal("Marcel", "cat", "MEOW")
+##print(animal2.type)
+#animal2.make_sound()
+##print(type(animal1))
+
+class fighter:
+    def __init__(self, name, health, damage) -> None:
+        self.name = name
+        self.health = health
+        self.damage = damage
+
+    def attack(self, target):
+        print(f"Fighter {self.name} attacks {target.name} for {self.damage} damage!")
+        target.health -= self.damage
+
+    def __str__(self) -> str:
+        print(f'Name: {self.name}\nHealth: {self.health}\nDamage: {self.damage}')
+
+class healer:
+    def __init__(self, name, health, heal_amount) -> None:
+        self.name = name
+        self.health = health
+        self.heal = heal_amount
+
+    def heal(self, target):
+        print(f"Healer {self.name} heals {target.name} for {self.heal} health!")
+        target.health += self.heal
+
+    def __str__(self) -> str:
+        print(f'Name: {self.name}\nHealth: {self.health}\nHealing Power: {self.heal}')
+    
+class goblin:
+    def __init__(self, name, health, damage) -> None:
+        self.name = name
+        self.health = health
+        self.damage = damage
+
+    def attack(self, target):
+        print(f"Goblin {self.name} attacks {target.name} for {self.damage} damage!")
+        target.health -= self.damage
+
+    def __str__(self) -> str:
+        print(f'Name: {self.name}\nHealth: {self.health}\nDamage: {self.damage}')
+
+class vampire:
+    def __init__(self, name, health, damage) -> None:
+        self.name = name
+        self.health = health
+        self.damage = damage
+
+    def attack(self, target):
+        print(f"Vampire {self.name} attacks {target.name} for {self.damage} damage!")
+        target.health -= self.damage
+
+    def lifesteal(self, target):
+        print(f"Vampire {self.name} steals life from {target.name} for {self.damage} health!")
+        target.health -= self.damage
+        self.health += self.damage
+
+    def __str__(self) -> str:
+        print(f'Name: {self.name}\nHealth: {self.health}\nDamage: {self.damage}')
