@@ -1,0 +1,107 @@
+class Book:
+    def __init__(self, name, authors, publish_year):
+        self.name = name
+        self.authors = authors
+        self.publish_year = publish_year
+
+    def __str__(self):
+        return f"{self.name} ({self.publish_year}) — {', '.join(self.authors)}"
+
+
+class Library:
+    def __init__(self, building_name, address):
+        self.building_name = building_name
+        self.address = address
+        self.books = []
+
+    def __str__(self):
+        return f"Библиотека: {self.building_name}, {self.address}"
+
+    def show_books(self):
+        if not self.books:
+            print("Книги не найдены")
+            return
+
+
+
+        for i, book in enumerate(self.books, 1): # показывает список обьектов списка, и помогает добавляя номер элемента ( нашел в инете )
+            print(f"{i}. {book}")
+
+
+    def book_add(self, name, authors, publish_year):
+        book = Book(name, authors, publish_year)
+        self.books.append(book)
+        print("Книга добавлена в библиотеку")
+
+    def del_book(self, name):
+        title = name.lower
+        for book in self.books:
+            if book.name.lower() == title:
+                self.books.remove(book)
+                print("Книга убрана из библиотек")
+                return
+        print("Книга не найдена")
+
+    def book_search(self, name):
+        results = [b for b in self.books if name.lower() in b.name.lower()]
+        return results
+
+    def book_search_by_authors(self, author):
+        results = [b for b in self.books if author.lower() in
+                   [a.lower() for a in b.authors]]
+        return results
+
+
+
+def menu():
+    library = Library("Библиотека Шага", "5а")
+    line = "=" * 10
+
+    while True:
+        print(f"\n{line}")
+        print("1 -  Добавить книгу")
+        print("2 -  УДалить книгу")
+        print("3 -  список книг")
+        print("4 -  поиск за именем")
+        print("5- Поиск за автором")
+        print("0 - Выход")
+
+        choice = input(": ")
+
+        if choice == "1":
+            name = input("Название: ")
+            authors = input("Автор: ")
+            year = input("Год: ")
+            library.book_add(name, authors, year)
+
+        elif choice == "2":
+            name = input("Название: ")
+            library.del_book(name)
+
+        elif choice == "3":
+            library.show_books()
+
+        elif choice == "4":
+            name = input("Название: ")
+            results = library.book_search(name)
+            for b in results:
+                print(b)
+            if not results:
+                print("Не найденно")
+
+        elif choice == "5":
+            author = input("Автор: ")
+            results = library.book_search_by_authors(author)
+            for b in results:
+                print(b)
+            if not results:
+                print("Не найденно")
+
+        elif choice == "0":
+            exit()
+
+        else:
+            print("действие не распозанно")
+
+
+menu()
