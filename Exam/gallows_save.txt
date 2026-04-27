@@ -1,0 +1,5 @@
+Word: grape
+Guessed letters: e, i, r, c, y, a, g, d, p
+Chances left: 2
+Outcome: won
+--------------------
