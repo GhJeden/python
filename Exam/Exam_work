@@ -1,16 +1,16 @@
 import random
 
-def menu(): # This is menu for the game, it will be more comfortable for playing. If I add other functions of the menu like game history, so it would be great.
+def menu(): # Это меню для игры, где игрок может выбрать начать новую игру, посмотреть историю игр или выйти из игры.
     print("Welcome to Gallow!")
     print("1. Start New Game")
     print("2. Game History")
     print("3. Exit")
     choice = input("Enter your choice: ")
-    if choice == "1":
+    if choice == "1": 
         play_game()
     elif choice == "2":
         try:
-            with open("gallows_save.txt", "r") as file:
+            with open("gallows_save.txt", "r") as file: 
                 history = file.read()
                 print("Game History:")
                 print(history)
@@ -25,7 +25,7 @@ def menu(): # This is menu for the game, it will be more comfortable for playing
         menu()
     return choice
 
-def load_dictionary(file_path):
+def load_dictionary(file_path): # Эта функция загружает слова из файла и возвращает их в виде списка.
     try:
         with open(file_path, "r") as file:
             content = file.read()
@@ -36,14 +36,14 @@ def load_dictionary(file_path):
         print("Error: The file was not found.")
         return []
 
-def get_random_word(): # This function gets a random word from the list of words.
+def get_random_word(): # Эта функция выдает рандомное слово из файла со словами.
     dictionary = load_dictionary("gallows_wordlist.txt")
     if not dictionary:
         print("No words available to choose from.")
         exit()
     return random.choice(dictionary)
 
-def display_gallow(gallow_state): # This function displays the state of the gallow for our sake.
+def display_gallow(gallow_state): # Эта функция отображает степень виселицы в зависимости от количества оставшихся шансов.
     if gallow_state == 0:
         print("""
          _______
@@ -111,7 +111,7 @@ def display_gallow(gallow_state): # This function displays the state of the gall
         print("Invalid gallow state.")
         exit()
 
-def save_data(word, guessed_letters, chances, outcome=None): # This is the function for saving the game.
+def save_data(word, guessed_letters, chances, outcome=None): # Это функция сохраняющая данные игры в файл.
     with open("gallows_save.txt", "a") as file:
         file.write(f"Word: {word}\n")
         file.write(f"Guessed letters: {', '.join(guessed_letters)}\n")
@@ -120,7 +120,7 @@ def save_data(word, guessed_letters, chances, outcome=None): # This is the funct
             file.write(f"Outcome: {outcome}\n")
         file.write("--------------------\n")
 
-def display_word(word, guessed_letters): # Function that displays the word with guessed letters and underscores for unguessed letters.
+def display_word(word, guessed_letters): # Эта функция отображает слово с угаданными буквами и подчеркиваниями для неугаданных букв.
     display = ""
     for letter in word:
         if letter in guessed_letters:
@@ -129,7 +129,7 @@ def display_word(word, guessed_letters): # Function that displays the word with 
             display += "_ "
     return display.strip()
 
-def play_game(): # Function that starts the game.
+def play_game(): # Функция начинающая игру.
     word = get_random_word()
     guessed_letters = []
     chances = 6
@@ -139,10 +139,10 @@ def play_game(): # Function that starts the game.
         guess = input("Guess a letter: ").lower()
 
         if guess in guessed_letters:
-            print("You already guessed that letter. Try again.")
+            print("You already guessed that letter. Try again.") # Строка для того чтобы избежать повторного угадывания одной и той же буквы.
             continue
 
-        guessed_letters.append(guess)
+        guessed_letters.append(guess) # Добавляем угаданную букву в список угаданных букв.
 
         if guess in word:
             print("Good job! That letter is in the word.")
@@ -152,7 +152,7 @@ def play_game(): # Function that starts the game.
             display_gallow(gallow_state)
             print(f"Wrong guess! You have {chances} chances left.")
 
-        if all(letter in guessed_letters for letter in word):
+        if all(letter in guessed_letters for letter in word): # При помощи этих строк мы заканчиваем игру или начинаем новую.
             print(f"Congratulations! You've guessed the word: {word}")
             print("Do you want to save your game? (yes/no)")
             if input().lower() == "yes":
