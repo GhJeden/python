@@ -3,3 +3,33 @@ Guessed letters: e, i, r, c, y, a, g, d, p
 Chances left: 2
 Outcome: won
 --------------------
+Word: octopus
+Guessed letters: e, a, g, hj, x, y
+Chances left: 0
+Outcome: lost
+--------------------
+Word: ocean
+Guessed letters: c, d, o, r, s, z
+Chances left: 0
+Outcome: lost
+--------------------
+Word: crystal
+Guessed letters: a, e, g, q, t, x
+Chances left: 0
+Outcome: lost
+--------------------
+Word: moon
+Guessed letters: b, d, e, l, m, n, o, w
+Chances left: 1
+Outcome: won
+--------------------
+Word: eclipse
+Guessed letters: c, e, i, l, p, s
+Chances left: 3
+Outcome: won
+--------------------
+Word: eclipse
+Guessed letters: a, d, s, t, w, x
+Chances left: 0
+Outcome: lost
+--------------------
